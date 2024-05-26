@@ -2,7 +2,6 @@ import java.io.*;
 import java.net.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class CalculatorClient {
     private static JTextField inputField;
@@ -15,11 +14,7 @@ public class CalculatorClient {
         resultArea.setEditable(false);
 
         JButton sendButton = new JButton("Send");
-        sendButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                sendExpression();
-            }
-        });
+        sendButton.addActionListener(e -> sendExpression());
 
         JPanel panel = new JPanel();
         panel.add(inputField);
